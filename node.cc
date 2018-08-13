@@ -29,48 +29,48 @@ Node* Node::GetNextNode() {
 }
 
 Node* Node::InsertPreviousNode(char data) {
-	Node* tempNode = new Node(data);
+	Node* temp_node = new Node(data);
 
 	if (this->prev != nullptr) {
-		tempNode->next = this;
-		tempNode->prev = this->prev;
-		this->prev->next = tempNode;
+		temp_node->next = this;
+		temp_node->prev = this->prev;
+		this->prev->next = temp_node;
 	}
 	else {
-		tempNode->next = this;
-		tempNode->prev = nullptr;
+		temp_node->next = this;
+		temp_node->prev = nullptr;
 
 	}
-	this->prev = tempNode;
+	this->prev = temp_node;
 	return nullptr;
 }
 
 Node* Node::InsertNextNode(char data) {
-	Node* tempNode = new Node(data);
+	Node* temp_node = new Node(data);
 	if (this->next != nullptr) {
-		tempNode->prev = this;
-		tempNode->next = this->next;
-		this->next->prev = tempNode;
+		temp_node->prev = this;
+		temp_node->next = this->next;
+		this->next->prev = temp_node;
 	}
 	else {
-		tempNode->next = nullptr;
-		tempNode->prev = this;
+		temp_node->next = nullptr;
+		temp_node->prev = this;
 	}
-	this->next = tempNode;
+	this->next = temp_node;
 	return nullptr;
 
 }
 
 bool Node::ErasePreviousNode() {
 	if (this->prev != nullptr) {
-		Node* tempNode = this->prev;
-		//this->prev = tempNode->prev;
-		if (tempNode->prev != nullptr) {
-			this->prev = tempNode->prev;
-			tempNode->prev->next = this;
+		Node* temp_node = this->prev;
+		//this->prev = temp_node->prev;
+		if (temp_node->prev != nullptr) {
+			this->prev = temp_node->prev;
+			temp_node->prev->next = this;
 		}
 		else { this->prev = nullptr; }
-		delete tempNode;
+		delete temp_node;
 		return true;
 	}
   return false;
@@ -78,14 +78,14 @@ bool Node::ErasePreviousNode() {
 
 bool Node::EraseNextNode() {
 	if (this->next != nullptr) {
-		Node* tempNode = this->next;
-		//this->next = tempNode->next;
-		if (tempNode->next != nullptr) {
-			this->next = tempNode->next;
-			tempNode->next->prev = this;
+		Node* temp_node = this->next;
+		//this->next = temp_node->next;
+		if (temp_node->next != nullptr) {
+			this->next = temp_node->next;
+			temp_node->next->prev = this;
 		}
 		else { this->next = nullptr; }
-		delete tempNode;
+		delete temp_node;
 		return true;
 	}
 
