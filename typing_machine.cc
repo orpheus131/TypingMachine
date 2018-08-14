@@ -29,7 +29,7 @@ void TypingMachine::RightKey() {
 }
 
 bool TypingMachine::TypeKey(char key) {
-	if (maxChar == MAX_NODE) return false;
+	if (maxChar >= MAX_NODE) return false;
 
 	if (32 <= key && key <= 126) {
 		if (endNode == cursorNode->GetPreviousNode()) {
@@ -47,20 +47,25 @@ bool TypingMachine::TypeKey(char key) {
 		}
 
 		maxChar++;
+		return true;
 	}
 
   return false;
 }
 
 bool TypingMachine::EraseKey() {
+	if (maxChar <= 0) return false;
+
 	if ((homeNode == endNode) && (endNode == cursorNode)) return false;
 	if (cursorNode->GetPreviousNode() == homeNode) {
 		homeNode = cursorNode;
 		cursorNode->ErasePreviousNode();
+		--maxChar;
 		return true;
 	}
 	if (cursorNode != homeNode) {
 		if (cursorNode->ErasePreviousNode()) {
+			--maxChar;
 			return true;
 		}
 	}
@@ -69,15 +74,16 @@ bool TypingMachine::EraseKey() {
 
 std::string TypingMachine::Print(char separator) {
 	line_buf = "";
-	if ((homeNode == endNode) && (endNode == cursorNode)) {
+
+	if ((homeNode == endNode) && (endNode == cursorNode) && (separator != 0)) {
 		line_buf += separator;
 		return (line_buf);
 	}
-	if (cursorNode == homeNode) line_buf += separator;
+	if ((cursorNode == homeNode) && (separator != 0)) line_buf += separator;
 
 	for (Node* i = this->homeNode; i != endNode; i = i->GetNextNode()) {
 			line_buf += i->GetData();
-			if (i == cursorNode->GetPreviousNode()) line_buf += separator;
+			if ((i == cursorNode->GetPreviousNode()) && (separator != 0)) line_buf += separator;
 
 	}
 	
