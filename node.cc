@@ -42,7 +42,7 @@ Node* Node::InsertPreviousNode(char data) {
 
 	}
 	this->prev = temp_node;
-	return nullptr;
+	return temp_node;
 }
 
 Node* Node::InsertNextNode(char data) {
@@ -57,7 +57,7 @@ Node* Node::InsertNextNode(char data) {
 		temp_node->prev = this;
 	}
 	this->next = temp_node;
-	return nullptr;
+	return temp_node;
 
 }
 
