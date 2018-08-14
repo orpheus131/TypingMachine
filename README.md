@@ -1,4 +1,4 @@
-# TypingMachine
+# Typing Machine
 
 ## 1. Problem Statement
 
@@ -6,8 +6,8 @@ Our task is to implement typing machine using doubly linked list data structure.
 typical typing machine which can be found in many editors.
 This typing machine has 3 features:
 * moving cursor,
-*  inserting/deleting characters near cursor,
-*  and printing whole string.
+* inserting/deleting characters near cursor,
+* and printing whole string.
 
 You will implement 2 classes:
 *  class Node, which is each node of linked list.
