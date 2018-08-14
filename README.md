@@ -19,7 +19,7 @@ You will implement 2 classes:
 
 We will implement Node type denoting each node of linked list.
 
-               +-----------+---------Node-Type---------+----------+
+                +----------+---------Node-Type---------+-----------+
                 | Previous |                           |    Next   |
             <---+--        |  Internal char type data  |         --+--->   
                 |   Node   |                           |    Node   |
