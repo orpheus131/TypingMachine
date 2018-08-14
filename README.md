@@ -27,18 +27,19 @@ We will implement Node type denoting each node of linked list.
 
 
 One public constructor and five public functions should be implemented.
+
 * **explicit Node(char data)**: This constructor should make Node storing data as internal
 data.
 * **char GetData()**: This function should return internal data.
 * **Node* InsertPreviousNode(char data)**: This function should make new Node with
 given data and Insert between previous node and this node. (with new keyword of C++)
 This function should return pointer of inserted node.
-* **Node* InsertNextNode(char data)**: This function should make new Node with given
+* **Node`*` InsertNextNode(char data)**: This function should make new Node with given
 data and Insert between next node and this node. (with new keyword of C++) This
 function should return pointer of inserted node.
-* **Node* GetPreviousNode()**: This function should return set previous node with Insert-
+* **Node`*` GetPreviousNode()**: This function should return set previous node with Insert-
 PreviousNode method. If not set, this function should return nullptr.
-* **Node* GetNextNode()**: This function should return set next node with InsertNextNode.
+* **Node`*` GetNextNode()**: This function should return set next node with InsertNextNode.
 If not set, this function should return nullptr.
 * **bool ErasePreviousNode()**: This function should erase previous node and deallocate.
 (with delete keyword of C++) If previous node does not exist so erase was unsuccessful,
@@ -61,7 +62,7 @@ One public constructor and seven public functions should be implemented.
 * **void LeftKey()**: Move cursor one step left.
 * **void RightKey()**: Move cursor one step right.
 * **bool TypeKey(char key)**: Insert key at the left of the cursor. This typing machine only
-accept key in ASCII range 32 (0x20, ` ') through 126 (0x7E, `~'), inclusive. If element
+accept key in ASCII range 32 (0x20, ' ') through 126 (0x7E, '~'), inclusive. If element
 is out of range, you should do nothing. If you inserted a character, this function should
 return true, otherwise return false.
 * **bool EraseKey()**: Erase a character at the left of the cursor. If it does not exist, do
