@@ -1,6 +1,6 @@
 # TypingMachine
 
-##1. Problem Statement
+## 1. Problem Statement
 
 Our task is to implement typing machine using doubly linked list data structure. It is just
 typical typing machine which can be found in many editors.
@@ -13,9 +13,9 @@ You will implement 2 classes:
 *  class Node, which is each node of linked list.
 *  class TypingMachine, which is typing machine with features.
 
-##2. Implementation
+## 2. Implementation
 
-###2.1 class Node
+### 2.1 class Node
 
 We will implement Node type denoting each node of linked list.
 
@@ -50,7 +50,7 @@ return false. Otherwise, you should return true.
 Making another private functions or members are free. It is NOT recommended to use
 global variables. You can verify correctness of this class Node with judging system.
 
-##2.2 class TypingMachine
+### 2.2 class TypingMachine
 
 We will implement TypingMachine type denoting whole typing machine.
 One public constructor and seven public functions should be implemented.
